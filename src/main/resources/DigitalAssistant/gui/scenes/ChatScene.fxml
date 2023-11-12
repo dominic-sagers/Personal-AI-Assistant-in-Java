@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="vBox" prefHeight="536.0" prefWidth="449.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="590.0" prefWidth="452.0">
+         <children>
+            <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" layoutY="132.0" minHeight="365.0" minWidth="449.0" prefHeight="365.0" prefWidth="449.0">
+               <effect>
+                  <Lighting bumpInput="$null">
+                  </Lighting>
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+               <content>
+                  <VBox fx:id="chatbox" spacing="5.0">
+                     <padding>
+                        <Insets bottom="5.0" top="5.0" />
+                     </padding></VBox>
+               </content>
+            </ScrollPane>
+            <ImageView fitHeight="132.0" fitWidth="476.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/banner.gif" />
+               </image>
+            </ImageView>
+            <TextField fx:id="textField" layoutY="497.0" prefHeight="39.0" prefWidth="362.0" promptText="Type here" style="-fx-background-color: #A9A9A9; -fx-border-style: solid; -fx-border-color: #ffffff;">
+               <effect>
+                  <Glow level="0.4">
+                     <input>
+                        <Lighting diffuseConstant="0.91" specularConstant="0.0" specularExponent="11.84" surfaceScale="2.71">
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                        </Lighting>
+                     </input>
+                  </Glow>
+               </effect>
+               <font>
+                  <Font name="System Bold" size="12.800000190734863" />
+               </font>
+            </TextField>
+            <Button fx:id="sendButton" layoutX="362.0" layoutY="497.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="88.0" style="-fx-background-color: black;" text="Google" textFill="#fcfbfb">
+               <font>
+                  <Font name="Lucida Console" size="12.800000190734863" />
+               </font>
+               <effect>
+                  <Bloom />
+               </effect>
+            </Button>
+            <ChoiceBox fx:id="choiceBox" layoutX="338.0" layoutY="14.0" prefHeight="25.0" prefWidth="97.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

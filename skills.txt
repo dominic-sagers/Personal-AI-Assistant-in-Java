@@ -1,0 +1,109 @@
+-----
+Name DistanceFinderSearch
+Question What is the distance between <CITY1> to <CITY2>?
+Slot <CITY1> @INPUT
+Slot <CITY2> @INPUT
+--
+Action <CITY1> @INPUT <CITY2> @INPUT |Search| The distance between <CITY1> to <CITY2>.
++++++
+-----
+Name MariekeSkill
+Question How do I get from <TOWN> to <TOWN> at <TIME>?
+Slot <TIME> 9 11
+Slot <TOWN> Maastricht Heerlen Den-Hague New-York Sittard
+--
+Action <TIME> 9 <TOWN> Maastricht <TOWN> Heerlen |Print| By train
+Action <TIME> 11 <TOWN> Maastricht <TOWN> Heerlen |Print| By car
+Action <TIME> 11 <TOWN> Maastricht <TOWN> Sittard |Print| By bike
+Action <TOWN> Maastricht <TOWN> Maastricht  |Print| teleportation
++++++
+-----
+Name Exams
+Question When is the <EXAM> exam?
+Slot <EXAM> Theoretical-Computer-Science Mathematical-Modelling Human-Computer-Interaction-&-Affective-Compution
+--
+Action <EXAM> Theoretical-Computer-Science |Print| The exam is from 9 to 11 on Tuesday April 4th
+Action <EXAM> Mathematical-Modelling |Print| The exam is from 13 to 15 on Thursday April 6th
+Action <EXAM> Human-Computer-Interaction-&-Affective-Compution |Print| There is no exams for Human Computer Interaction & Affective Compution
++++++
+-----
+Name Subjects
+Question Which subjects are in period <PERIOD>?
+Slot <PERIOD> 1 2 3 4 5 6
+--
+Action <PERIOD> 1 |Print| The subjects are Databases, Probability and Statistics, Graph Theory and the project
+Action <PERIOD> 2 |Print| The subjects are Machine Learning, Simulation and Statistical Analysis, Reasoning Techniques and the project
+Action <PERIOD> 3 |Print| There is only the project
+Action <PERIOD> 4 |Print| The subjects are Theoretical Computer Science, Mathematical Modelling, Human Computer Interaction & Affective Compution and the project
+Action <PERIOD> 5 |Print| The subjects are Philosophy and Artificial Intelligence, Linear Programming, one elective of Natural Language processing or Introduction to Image and Video Processing and the project
+Action <PERIOD> 6 |Print| There is only the project
++++++
+-----
+Name Timer
+Question Set a timer for <AMOUNT> <UNIT>.
+Slot <AMOUNT> @INPUT
+Slot <UNIT> seconds minutes hours
+--
+Action <AMOUNT> @INPUT <UNIT> seconds |Search| Set a timer for <AMOUNT> seconds
+Action <AMOUNT> @INPUT <UNIT> minutes |Search| Set a timer for <AMOUNT> minutes
+Action <AMOUNT> @INPUT <UNIT> hours |Search| Set a timer for <AMOUNT> hour(s)
++++++
+-----
+Name gorilla
+Question gorilla likes <FOOD> and <ACTIVITY>
+Slot <ACTIVITY> jumping eating
+Slot <FOOD> banana orange grape nuts
+--
+Action <ACTIVITY> jumping <FOOD> nuts |Print| i love jumping and eating banan
+Action <ACTIVITY> jumping <FOOD> nuts |Print| I love eating nuts while i jump yummmmmmmmmmm
++++++
+-----
+Name CFGTest
+Question Which lectures are there <TIMEEXPRESSION>
+Slot <TIMES> 9 12
+Slot <DAYS> Monday Tuesday Wednesday Thursday Friday Saturday
+Slot <TIMEEXPRESSION> on <DAYS> at <TIMES>
+--
+Action <TIMES> 9 <DAYS> Monday  |Print| We start the week with math.
++++++
+-----
+Name weather
+Question How is the weather in <LOCATION> <pro> <verb> in <location>. What is the weather?
+Slot <verb> am is
+Slot <place> NewYork Berlin
+Slot <hour> tomorrow today
+Slot <LOCATION> in <place> <hour>
+Slot <pro> I she he mymother
+--
+Action <place> NewYork <hour> tomorrow  |Print| It will be sunny.
+Action <verb> is <place> NewYork <hour> today <pro> mymother |Print| It is stormy today.
+Action <place> Berlin  |Print| It is rainy.
++++++
+-----
+Name Translator
+Question Can you translate <SENTENCE> to <LANGUAGE>?
+Slot <SENTENCE> @INPUT
+Slot <LANGUAGE> @INPUT
+--
+Action <SENTENCE> @INPUT <LANGUAGE> @INPUT  |Search| Translate <SENTENCE> to <LANGUAGE>.
++++++
+-----
+Name OpeningTimes
+Question What are the opening times of the <BUILDING>?
+Slot <BUILDING> university library SportsCentre
+--
+Action <BUILDING> university |Print| The university is open from 8:00-20:00 and is closed on weekends
+Action <BUILDING> library |Print| The Inner City Library is open from 8:30-22:00
+Action <BUILDING> SportsCentre |Print| The Sports Centre is open from 7:00-23:00
++++++
+-----
+Name Fixing
+Question How to <VERB> <PRO> <NOUN>
+Slot <VERB> debug fix implement
+Slot <PRO> my your our
+Slot <NOUN> compiler code program
+--
+Action <VERB> debug <NOUN> code |Print| Use the debug feature on your IDE
+Action <VERB> fix <NOUN> code |Print| Try looking up how to debug and following those steps
+Action <VERB> implement <PRO> our <NOUN> program |Print| Work together on the implementation 
++++++
